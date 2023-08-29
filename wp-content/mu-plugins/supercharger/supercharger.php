@@ -25,8 +25,7 @@ $pages = array(
                         'checked'   => true,
                         'text'      => __( 'Enable minification of HTML', 'supercharger' ),
                     ),
-                ),
-                
+                )
             )
         )
     ),
@@ -68,12 +67,6 @@ $pages = array(
                         'checked'   => true,
                         'text'      => __( 'Block the WP-Version from displaying the actual version of your WordPress site.', 'supercharger' ),
                     ),
-                    'disable_search' => array(
-                        'title'     => __( 'Disable Search', 'supercharger' ),
-                        'type'      => 'checkbox',
-                        'checked'   => true,
-                        'text'      => __( 'Disable the search functionality on your WordPress site.', 'supercharger' ),
-                    ),
                     'disable_comment_url'   => array(
                         'title'     => __( 'Disable Comment URL', 'supercharger' ),
                         'type'      => 'checkbox',
@@ -109,11 +102,11 @@ $pages = array(
                         'type'      => 'checkbox',
                         'checked'   => true,
                         'text'      => __( 'Disable the jQuery Migrate script on your WordPress site.', 'supercharger' ),
-                    )
-                ),
+                    ),
+                )
             )
         )
-	),
+	)
 );
 $option_page = new RationalOptionPages( $pages );
 
@@ -150,11 +143,6 @@ if( $security_options['block_wp_version'] ) {
 /* Disable the comment URL field */
 if( $security_options['disable_comment_url'] ) {
     require_once( __DIR__ . '/includes/disable-comment-url.php' );
-}
-
-/* Disable search */
-if( $security_options['disable_search'] ) {
-    require_once( __DIR__ . '/includes/disable-search.php' );
 }
 
 /* Disable wp-login.php notices */
