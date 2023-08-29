@@ -11,6 +11,25 @@ if ( !class_exists( 'RationalOptionPages' ) ) {
 	require_once( __DIR__ . '/third-party/RationalOptionPages.php' );
 }
 $pages = array(
+    'supercharger_performance'    => array(
+        'parent_slug'    => 'options-general.php',
+        'page_title'    => __( 'Performance', 'supercharger' ),
+        'sections'      => array(
+            'performance-block'   => array(
+                'title'    => __( 'Performance Settings', 'supercharger' ),
+                'text'      => '<p>' . __( 'The items in this section are options that should increase the overall performance of your WordPress website.', 'supercharger' ) . '</p>',
+                'fields'    => array(
+                    'enable_html_minification' => array(
+                        'title'    => __( 'Enable HTML Minification', 'supercharger' ),
+                        'type'      => 'checkbox',
+                        'checked'   => true,
+                        'text'      => __( 'Enable minification of HTML', 'supercharger' ),
+                    ),
+                ),
+                
+            )
+        )
+    ),
 	'supercharger_security'	=> array(
         'parent_slug'    => 'options-general.php',
 		'page_title'	=> __( 'Security', 'supercharger' ),
@@ -95,25 +114,6 @@ $pages = array(
             )
         )
 	),
-    'supercharger_performance'    => array(
-        'parent_slug'    => 'options-general.php',
-        'page_title'    => __( 'Performance', 'supercharger' ),
-        'sections'      => array(
-            'performance-block'   => array(
-                'title'    => __( 'Performance Settings', 'supercharger' ),
-                'text'      => '<p>' . __( 'The items in this section are options that should increase the overall performance of your WordPress website.', 'supercharger' ) . '</p>',
-                'fields'    => array(
-                    'enable_html_minification' => array(
-                        'title'    => __( 'Enable HTML Minification', 'supercharger' ),
-                        'type'      => 'checkbox',
-                        'checked'   => true,
-                        'text'      => __( 'Enable minification of HTML', 'supercharger' ),
-                    ),
-                ),
-                
-            )
-        )
-    )
 );
 $option_page = new RationalOptionPages( $pages );
 
